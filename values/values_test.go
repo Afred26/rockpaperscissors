@@ -2,6 +2,7 @@ package values
 
 import "fmt"
 
+//
 func ExampleValue_String() {
 	rock := Rock
 	paper := Paper

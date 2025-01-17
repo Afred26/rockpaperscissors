@@ -10,12 +10,24 @@ const (
 
 // String liefert den Wert als String.
 func (v Value) String() string {
-	// TODO
-	return ""
+	switch v % 3 {
+	case Rock:
+		return "Stein"
+	case Paper:
+		return "Papier"
+	case Scissors:
+		return "Schere"
+	default:
+		return "Unknown"
+	}
+
 }
 
 // Beats gibt an, ob der Wert v den Wert w schlägt.
 func (v Value) Beats(w Value) bool {
-	// TODO
-	return false
+	vi := int(v)
+	wi := int(w)
+
+	return vi == (wi+1)%3
+
 }
