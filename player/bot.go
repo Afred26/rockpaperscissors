@@ -1,6 +1,7 @@
 package player
 
 import (
+	"math/rand"
 	"rockpaperscissors/values"
 )
 
@@ -17,22 +18,22 @@ func NewBot(n string) *Bot {
 // GetName liefert den Namen des Spielers als String.
 func (p Bot) GetName() string {
 	// TODO
-	return ""
+	return p.Name
 }
 
 // GetScore liefert den Punktestand des Spielers.
 func (p Bot) GetScore() int {
 	// TODO
-	return 0
+	return p.Score
 }
 
 // IncrementScore erhöht den Punktestand des Spielers um eins.
 func (p *Bot) IncrementScore() {
-	// TODO
+	p.Score++
 }
 
 // GetMove liefert einen Zug des Spielers.
 func (p Bot) GetMove() values.Value {
-	// TODO
-	return values.Rock
+	r := rand.Intn(3)
+	return values.Value(r)
 }
